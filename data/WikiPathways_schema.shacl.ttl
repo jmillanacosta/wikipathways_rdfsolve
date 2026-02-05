@@ -1,0 +1,1230 @@
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix iao: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix oboinowl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wp: <http://vocabularies.wikipathways.org/wp#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+void:DatasetDescription a sh:NodeShape ;
+    sh:description "Class representing void_Dataset_Description" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class void:Dataset ;
+            sh:description "Property foaf:primaryTopic" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path foaf:primaryTopic ] ;
+    sh:targetClass void:DatasetDescription .
+
+void:Linkset a sh:NodeShape ;
+    sh:description "Class representing void_Linkset" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:ObjectProperty ;
+            sh:description "Property void:linkPredicate" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path void:linkPredicate ],
+        [ sh:class void:Dataset ;
+            sh:description "Property void:subjectsTarget" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path void:subjectsTarget ] ;
+    sh:targetClass void:Linkset .
+
+wp:Binding a sh:NodeShape ;
+    sh:description "Class representing wp_Binding" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:source ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:participants ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:target ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:order 7 ;
+        sh:path rdf:type ] ;
+    sh:targetClass wp:Binding .
+
+wp:Catalysis a sh:NodeShape ;
+    sh:description "Class representing wp_Catalysis" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:target ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:participants ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:source ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path rdf:type ] ;
+    sh:targetClass wp:Catalysis .
+
+wp:ComplexBinding a sh:NodeShape ;
+    sh:description "Class representing wp_Complex_Binding" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:participants ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path rdf:type ] ;
+    sh:targetClass wp:ComplexBinding .
+
+wp:Conversion a sh:NodeShape ;
+    sh:description "Class representing wp_Conversion" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:participants ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:source ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:target ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ] ;
+    sh:targetClass wp:Conversion .
+
+wp:DirectedInteraction a sh:NodeShape ;
+    sh:description "Class representing wp_Directed_Interaction" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHmdb" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:bdbHmdb ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:source ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbReactome" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:bdbReactome ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:target ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:participants ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path wp:bdbChEBI ] ;
+    sh:targetClass wp:DirectedInteraction .
+
+wp:GeneProduct a sh:NodeShape ;
+    sh:description "Class representing wp_Gene_Product" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:Complex ;
+            sh:description "Property wp:bdbComplexPortal" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:bdbComplexPortal ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEnsembl" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:bdbEnsembl ],
+        [ sh:class foaf:Person ;
+            sh:description "Property dc:creator" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:creator ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property pav:hasVersion" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path pav:hasVersion ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbUniprot" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path wp:bdbUniprot ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbKeggCompound" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path wp:bdbKeggCompound ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dc:identifier ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:bdbChEBI ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEntrezGene" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:bdbEntrezGene ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHgncSymbol" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path wp:bdbHgncSymbol ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbReactome" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path wp:bdbReactome ] ;
+    sh:targetClass wp:GeneProduct .
+
+wp:Inhibition a sh:NodeShape ;
+    sh:description "Class representing wp_Inhibition" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path rdf:type ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:target ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHmdb" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:bdbHmdb ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path wp:bdbChEBI ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:participants ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:source ] ;
+    sh:targetClass wp:Inhibition .
+
+wp:Interaction a sh:NodeShape ;
+    sh:description "Class representing wp_Interaction" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:participants ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path wp:target ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:source ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:bdbChEBI ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHmdb" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:bdbHmdb ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbReactome" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:bdbReactome ] ;
+    sh:targetClass wp:Interaction .
+
+wp:Metabolite a sh:NodeShape ;
+    sh:description "Class representing wp_Metabolite" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChemspider" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:bdbChemspider ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property rdfs:seeAlso" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path rdfs:seeAlso ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbLipidMaps" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:bdbLipidMaps ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:bdbChEBI ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbKeggCompound" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:bdbKeggCompound ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:identifier ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHmdb" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:bdbHmdb ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbInChIKey" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:bdbInChIKey ];
+    sh:targetClass wp:Metabolite .
+
+wp:Protein a sh:NodeShape ;
+    sh:description "Class representing wp_Protein" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEntrezGene" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:bdbEntrezGene ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHgncSymbol" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:bdbHgncSymbol ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:identifier ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEnsembl" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:bdbEnsembl ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbUniprot" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:bdbUniprot ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:bdbChEBI ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbReactome" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:bdbReactome ];
+    sh:targetClass wp:Protein .
+
+wp:Rna a sh:NodeShape ;
+    sh:description "Class representing wp_Rna" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbKeggCompound" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:bdbKeggCompound ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEntrezGene" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:bdbEntrezGene ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHgncSymbol" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:bdbHgncSymbol ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEnsembl" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:bdbEnsembl ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:identifier ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbUniprot" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:bdbUniprot ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:bdbChEBI ];
+    sh:targetClass wp:Rna .
+
+wp:Stimulation a sh:NodeShape ;
+    sh:description "Class representing wp_Stimulation" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path rdf:type ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:source ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:target ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:participants ] ;
+    sh:targetClass wp:Stimulation .
+
+wp:TranscriptionTranslation a sh:NodeShape ;
+    sh:description "Class representing wp_Transcription_Translation" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:participants ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:source ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:target ] ;
+    sh:targetClass wp:TranscriptionTranslation .
+
+wp:Translocation a sh:NodeShape ;
+    sh:description "Class representing wp_Translocation" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:source" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path wp:source ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path wp:participants ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:target" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:target ] ;
+    sh:targetClass wp:Translocation .
+
+owl:Axiom a sh:NodeShape ;
+    sh:description "Class representing owl_Axiom" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property owl:annotatedSource" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path owl:annotatedSource ],
+        [ sh:class owl:AnnotationProperty ;
+            sh:description "Property owl:annotatedProperty" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path owl:annotatedProperty ],
+        [ sh:class owl:AnnotationProperty ;
+            sh:description "Property oboinowl:hasSynonymType" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path oboinowl:hasSynonymType ] ;
+    sh:targetClass owl:Axiom .
+
+owl:DatatypeProperty a sh:NodeShape ;
+    sh:description "Class representing owl_Datatype_Property" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Ontology ;
+            sh:description "Property skos:inScheme" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path skos:inScheme ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdfs:range" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path rdfs:range ] ;
+    sh:targetClass owl:DatatypeProperty .
+
+owl:Restriction a sh:NodeShape ;
+    sh:description "Class representing owl_Restriction" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property owl:someValuesFrom" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path owl:someValuesFrom ],
+        [ sh:class owl:ObjectProperty ;
+            sh:description "Property owl:onProperty" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path owl:onProperty ] ;
+    sh:targetClass owl:Restriction .
+
+skos:Collection a sh:NodeShape ;
+    sh:description "Class representing skos_Collection" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property wp:diseaseOntologyTag" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path wp:diseaseOntologyTag ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property cito:cites" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path cito:cites ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path rdf:type ],
+        [ sh:class foaf:Image ;
+            sh:description "Property foaf:img" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path foaf:img ],
+        [ sh:class owl:Class ;
+            sh:description "Property wp:pathwayOntologyTag" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:pathwayOntologyTag ],
+        [ sh:class owl:Class ;
+            sh:description "Property wp:ontologyTag" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:ontologyTag ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:identifier ] ;
+    sh:targetClass skos:Collection .
+
+
+wp:PublicationReference a sh:NodeShape ;
+    sh:description "Class representing wp_Publication_Reference" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property cito:cites" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path cito:cites ],
+        [ sh:class wp:PublicationReference ;
+            sh:description "Property foaf:page" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path foaf:page ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path rdf:type ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:isPartOf ] ;
+    sh:targetClass wp:PublicationReference .
+
+dcat:Distribution a sh:NodeShape ;
+    sh:description "Class representing dcat_Distribution" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dcat:Distribution .
+
+
+foaf:Image a sh:NodeShape ;
+    sh:description "Class representing foaf_Image" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass foaf:Image .
+
+void:Dataset a sh:NodeShape ;
+    sh:description "Class representing void_Dataset" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property dcterms:subject" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dcterms:subject ],
+        [ sh:class owl:Ontology ;
+            sh:description "Property void:vocabulary" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path void:vocabulary ],
+        [ sh:class dcat:Distribution ;
+            sh:description "Property dcat:distribution" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path dcat:distribution ],
+        [ sh:class void:Dataset ;
+            sh:description "Property void:subset" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path void:subset ];
+    sh:targetClass void:Dataset .
+
+wp:Complex a sh:NodeShape ;
+    sh:description "Class representing wp_Complex" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbUniprot" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path wp:bdbUniprot ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEntrezGene" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:bdbEntrezGene ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHgncSymbol" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:bdbHgncSymbol ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path rdf:type ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:Complex ;
+            sh:description "Property wp:bdbComplexPortal" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path wp:bdbComplexPortal ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path wp:participants ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbReactome" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:bdbReactome ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:identifier ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEnsembl" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path wp:bdbEnsembl ] ;
+    sh:targetClass wp:Complex .
+
+foaf:Person a sh:NodeShape ;
+    sh:description "Class representing foaf_Person" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass foaf:Person .
+
+owl:AnnotationProperty a sh:NodeShape ;
+    sh:description "Class representing owl_Annotation_Property" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:AnnotationProperty ;
+            sh:description "Property rdfs:subPropertyOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path rdfs:subPropertyOf ] ;
+    sh:targetClass owl:AnnotationProperty .
+
+owl:ObjectProperty a sh:NodeShape ;
+    sh:description "Class representing owl_Object_Property" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property rdfs:domain" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path rdfs:domain ],
+        [ sh:class owl:ObjectProperty ;
+            sh:description "Property rdfs:subClassOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path rdfs:subClassOf ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdfs:range" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path rdfs:range ],
+        [ sh:class owl:Ontology ;
+            sh:description "Property skos:inScheme" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path skos:inScheme ] ;
+    sh:targetClass owl:ObjectProperty .
+
+owl:Ontology a sh:NodeShape ;
+    sh:description "Class representing owl_Ontology" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass owl:Ontology .
+
+
+wp:Pathway a sh:NodeShape ;
+    sh:description "Class representing wp_Pathway" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Class ;
+            sh:description "Property wp:pathwayOntologyTag" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path wp:pathwayOntologyTag ],
+        [ sh:class owl:Class ;
+            sh:description "Property wp:diseaseOntologyTag" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path wp:diseaseOntologyTag ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class foaf:Person ;
+            sh:description "Property dc:creator" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:creator ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHgncSymbol" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:bdbHgncSymbol ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path rdf:type ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property pav:hasVersion" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path pav:hasVersion ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbUniprot" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path wp:bdbUniprot ],
+        [ sh:class owl:Class ;
+            sh:description "Property wp:ontologyTag" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path wp:ontologyTag ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property cito:cites" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path cito:cites ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dc:identifier ],
+        [ sh:class foaf:Image ;
+            sh:description "Property foaf:img" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path foaf:img ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEnsembl" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:bdbEnsembl ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEntrezGene" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:bdbEntrezGene ] ;
+    sh:targetClass wp:Pathway .
+
+owl:Class a sh:NodeShape ;
+    sh:description "Class representing owl_Class" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:ObjectProperty ;
+            sh:description "Property rdfs:subClassOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path rdfs:subClassOf ],
+        [ sh:class owl:AnnotationProperty ;
+            sh:description "Property oboinowl:inSubset" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path oboinowl:inSubset ],
+        [ sh:class owl:Ontology ;
+            sh:description "Property skos:inScheme" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path skos:inScheme ],
+        [ sh:class owl:Class ;
+            sh:description "Property iao:0100001" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path iao:0100001 ],
+        [ sh:class owl:Class ;
+            sh:description "Property owl:disjointWith" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path owl:disjointWith ] ;
+    sh:targetClass owl:Class .
+
+wp:DataNode a sh:NodeShape ;
+    sh:description "Class representing wp_Data_Node" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHmdb" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path wp:bdbHmdb ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbInChIKey" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path wp:bdbInChIKey ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbHgncSymbol" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path wp:bdbHgncSymbol ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property rdfs:seeAlso" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 21 ;
+            sh:path rdfs:seeAlso ],
+        [ sh:class wp:Complex ;
+            sh:description "Property wp:bdbComplexPortal" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path wp:bdbComplexPortal ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbUniprot" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 17 ;
+            sh:path wp:bdbUniprot ],
+        [ sh:class foaf:Person ;
+            sh:description "Property dc:creator" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path dc:creator ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:participants" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 19 ;
+            sh:path wp:participants ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEntrezGene" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path wp:bdbEntrezGene ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbReactome" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 16 ;
+            sh:path wp:bdbReactome ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbEnsembl" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path wp:bdbEnsembl ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property dcterms:isPartOf" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property dc:identifier" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dc:identifier ],
+        [ sh:class wp:Pathway ;
+            sh:description "Property pav:hasVersion" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path pav:hasVersion ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbKeggCompound" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path wp:bdbKeggCompound ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbLipidMaps" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path wp:bdbLipidMaps ],
+        [ sh:class owl:Class ;
+            sh:description "Property rdf:type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 20 ;
+            sh:path rdf:type ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChemspider" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path wp:bdbChemspider ],
+        [ sh:class wp:DataNode ;
+            sh:description "Property wp:bdbChEBI" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path wp:bdbChEBI ] ;
+    sh:targetClass wp:DataNode .
+

@@ -1,0 +1,6 @@
+rdfsolve
+ipykernel
+jupyter
+rdflib
+plotly
+Ipython

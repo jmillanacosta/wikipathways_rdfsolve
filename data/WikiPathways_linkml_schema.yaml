@@ -1,0 +1,1708 @@
+name: wikipathways_schema
+description: Schema for WikiPathways RDF generated with rdfsolve
+id: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+prefixes:
+  wikipathways_schema:
+    prefix_prefix: wikipathways_schema
+    prefix_reference: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  schema:
+    prefix_prefix: schema
+    prefix_reference: http://schema.org/
+  rdfs:
+    prefix_prefix: rdfs
+    prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  rdf:
+    prefix_prefix: rdf
+    prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  xsd:
+    prefix_prefix: xsd
+    prefix_reference: http://www.w3.org/2001/XMLSchema#
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
+  iao:
+    prefix_prefix: iao
+    prefix_reference: http://purl.obolibrary.org/obo/IAO_
+  wp:
+    prefix_prefix: wp
+    prefix_reference: http://vocabularies.wikipathways.org/wp#
+  dc:
+    prefix_prefix: dc
+    prefix_reference: http://purl.org/dc/elements/1.1/
+  foaf:
+    prefix_prefix: foaf
+    prefix_reference: http://xmlns.com/foaf/0.1/
+  skos:
+    prefix_prefix: skos
+    prefix_reference: http://www.w3.org/2004/02/skos/core#
+  dcterms:
+    prefix_prefix: dcterms
+    prefix_reference: http://purl.org/dc/terms/
+  gpml:
+    prefix_prefix: gpml
+    prefix_reference: http://vocabularies.wikipathways.org/gpml#
+  void:
+    prefix_prefix: void
+    prefix_reference: http://rdfs.org/ns/void#
+  pav:
+    prefix_prefix: pav
+    prefix_reference: http://purl.org/pav/
+  cito:
+    prefix_prefix: cito
+    prefix_reference: http://purl.org/spar/cito/
+  oboinowl:
+    prefix_prefix: oboinowl
+    prefix_reference: http://www.geneontology.org/formats/oboInOwl#
+  dcat:
+    prefix_prefix: dcat
+    prefix_reference: http://www.w3.org/ns/dcat#
+default_prefix: wikipathways_schema
+default_range: string
+types:
+  string:
+    name: string
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/String
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    base: str
+    uri: xsd:string
+  uriorcurie:
+    name: uriorcurie
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/Uriorcurie
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    base: URIorCURIE
+    uri: xsd:anyURI
+slots:
+  void_subset:
+    name: void_subset
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/void_subset
+    description: Property void:subset
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#subset
+    slot_uri: http://rdfs.org/ns/void#subset
+    owner: void_Dataset
+    domain_of:
+    - void_Dataset
+    range: void_Dataset
+    inlined: true
+    inlined_as_list: true
+  dc_identifier:
+    name: dc_identifier
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/dc_identifier
+    description: Property dc:identifier
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/dc/elements/1.1/identifier
+    slot_uri: http://purl.org/dc/elements/1.1/identifier
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Metabolite
+    - wp_Protein
+    - wp_Rna
+    - skos_Collection
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  foaf_primary_Topic:
+    name: foaf_primary_Topic
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/foaf_primary_Topic
+    description: Property foaf:primaryTopic
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://xmlns.com/foaf/0.1/primaryTopic
+    slot_uri: http://xmlns.com/foaf/0.1/primaryTopic
+    owner: void_Dataset_Description
+    domain_of:
+    - void_Dataset_Description
+    range: void_Dataset
+    inlined: true
+    inlined_as_list: true
+  wp_target:
+    name: wp_target
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_target
+    description: Property wp:target
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#target
+    slot_uri: http://vocabularies.wikipathways.org/wp#target
+    owner: wp_Inhibition
+    domain_of:
+    - wp_Binding
+    - wp_Interaction
+    - wp_Catalysis
+    - wp_Conversion
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    - wp_Stimulation
+    - wp_Transcription_Translation
+    - wp_Translocation
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Lipid_Maps:
+    name: wp_bdb_Lipid_Maps
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Lipid_Maps
+    description: Property wp:bdbLipidMaps
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbLipidMaps
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbLipidMaps
+    owner: wp_Data_Node
+    domain_of:
+    - wp_Data_Node
+    - wp_Metabolite
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  void_vocabulary:
+    name: void_vocabulary
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/void_vocabulary
+    description: Property void:vocabulary
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#vocabulary
+    slot_uri: http://rdfs.org/ns/void#vocabulary
+    owner: void_Dataset
+    domain_of:
+    - void_Dataset
+    range: owl_Ontology
+    inlined: true
+    inlined_as_list: true
+  wp_source:
+    name: wp_source
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_source
+    description: Property wp:source
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#source
+    slot_uri: http://vocabularies.wikipathways.org/wp#source
+    owner: wp_Inhibition
+    domain_of:
+    - wp_Binding
+    - wp_Interaction
+    - wp_Catalysis
+    - wp_Conversion
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    - wp_Stimulation
+    - wp_Transcription_Translation
+    - wp_Translocation
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  cito_cites:
+    name: cito_cites
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/cito_cites
+    description: Property cito:cites
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/spar/cito/cites
+    slot_uri: http://purl.org/spar/cito/cites
+    owner: wp_Pathway
+    domain_of:
+    - wp_Pathway
+    - skos_Collection
+    - wp_Publication_Reference
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  wp_disease_Ontology_Tag:
+    name: wp_disease_Ontology_Tag
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_disease_Ontology_Tag
+    description: Property wp:diseaseOntologyTag
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#diseaseOntologyTag
+    slot_uri: http://vocabularies.wikipathways.org/wp#diseaseOntologyTag
+    owner: wp_Pathway
+    domain_of:
+    - wp_Pathway
+    - skos_Collection
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Hmdb:
+    name: wp_bdb_Hmdb
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Hmdb
+    description: Property wp:bdbHmdb
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbHmdb
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbHmdb
+    owner: wp_Inhibition
+    domain_of:
+    - wp_Data_Node
+    - wp_Metabolite
+    - wp_Interaction
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Chemspider:
+    name: wp_bdb_Chemspider
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Chemspider
+    description: Property wp:bdbChemspider
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbChemspider
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbChemspider
+    owner: wp_Data_Node
+    domain_of:
+    - wp_Data_Node
+    - wp_Metabolite
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  gpml_has_Point:
+    name: gpml_has_Point
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/gpml_has_Point
+    description: Property gpml:hasPoint
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#hasPoint
+    slot_uri: http://vocabularies.wikipathways.org/gpml#hasPoint
+    owner: gpml_Interaction
+    domain_of:
+    - gpml_Graphical_Line
+    - gpml_Interaction
+    range: gpml_Point
+    inlined: true
+    inlined_as_list: true
+  void_example_Resource:
+    name: void_example_Resource
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/void_example_Resource
+    description: Property void:exampleResource
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#exampleResource
+    slot_uri: http://rdfs.org/ns/void#exampleResource
+    owner: void_Dataset
+    domain_of:
+    - void_Dataset
+    range: gpml_Publication_Xref
+    inlined: true
+    inlined_as_list: true
+  owl_annotated_Property:
+    name: owl_annotated_Property
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/owl_annotated_Property
+    description: Property owl:annotatedProperty
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#annotatedProperty
+    slot_uri: http://www.w3.org/2002/07/owl#annotatedProperty
+    owner: owl_Axiom
+    domain_of:
+    - owl_Axiom
+    range: owl_Annotation_Property
+    inlined: true
+    inlined_as_list: true
+  oboinowl_has_Synonym_Type:
+    name: oboinowl_has_Synonym_Type
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/oboinowl_has_Synonym_Type
+    description: Property oboinowl:hasSynonymType
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.geneontology.org/formats/oboInOwl#hasSynonymType
+    slot_uri: http://www.geneontology.org/formats/oboInOwl#hasSynonymType
+    owner: owl_Axiom
+    domain_of:
+    - owl_Axiom
+    range: owl_Annotation_Property
+    inlined: true
+    inlined_as_list: true
+  wp_pathway_Ontology_Tag:
+    name: wp_pathway_Ontology_Tag
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_pathway_Ontology_Tag
+    description: Property wp:pathwayOntologyTag
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#pathwayOntologyTag
+    slot_uri: http://vocabularies.wikipathways.org/wp#pathwayOntologyTag
+    owner: wp_Pathway
+    domain_of:
+    - wp_Pathway
+    - skos_Collection
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Ch_EBI:
+    name: wp_bdb_Ch_EBI
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Ch_EBI
+    description: Property wp:bdbChEBI
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbChEBI
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbChEBI
+    owner: wp_Protein
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Metabolite
+    - wp_Protein
+    - wp_Rna
+    - wp_Interaction
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  wp_ontology_Tag:
+    name: wp_ontology_Tag
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_ontology_Tag
+    description: Property wp:ontologyTag
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#ontologyTag
+    slot_uri: http://vocabularies.wikipathways.org/wp#ontologyTag
+    owner: wp_Pathway
+    domain_of:
+    - wp_Pathway
+    - skos_Collection
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  rdfs_range:
+    name: rdfs_range
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/rdfs_range
+    description: Property rdfs:range
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2000/01/rdf-schema#range
+    slot_uri: http://www.w3.org/2000/01/rdf-schema#range
+    owner: owl_Datatype_Property
+    domain_of:
+    - owl_Object_Property
+    - owl_Datatype_Property
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  dcat_distribution:
+    name: dcat_distribution
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/dcat_distribution
+    description: Property dcat:distribution
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/ns/dcat#distribution
+    slot_uri: http://www.w3.org/ns/dcat#distribution
+    owner: void_Dataset
+    domain_of:
+    - void_Dataset
+    range: dcat_Distribution
+    inlined: true
+    inlined_as_list: true
+  rdfs_domain:
+    name: rdfs_domain
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/rdfs_domain
+    description: Property rdfs:domain
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2000/01/rdf-schema#domain
+    slot_uri: http://www.w3.org/2000/01/rdf-schema#domain
+    owner: owl_Object_Property
+    domain_of:
+    - owl_Object_Property
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Ensembl:
+    name: wp_bdb_Ensembl
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Ensembl
+    description: Property wp:bdbEnsembl
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbEnsembl
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbEnsembl
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Protein
+    - wp_Rna
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  dcterms_subject:
+    name: dcterms_subject
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/dcterms_subject
+    description: Property dcterms:subject
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/dc/terms/subject
+    slot_uri: http://purl.org/dc/terms/subject
+    owner: void_Dataset
+    domain_of:
+    - void_Dataset
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  gpml_state_Of:
+    name: gpml_state_Of
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/gpml_state_Of
+    description: Property gpml:stateOf
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#stateOf
+    slot_uri: http://vocabularies.wikipathways.org/gpml#stateOf
+    owner: gpml_State
+    domain_of:
+    - gpml_State
+    range: gpml_Data_Node
+    inlined: true
+    inlined_as_list: true
+  iao_0100001:
+    name: iao_0100001
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/iao_0100001
+    description: Property iao:0100001
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.obolibrary.org/obo/IAO_0100001
+    slot_uri: http://purl.obolibrary.org/obo/IAO_0100001
+    owner: owl_Class
+    domain_of:
+    - owl_Class
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Complex_Portal:
+    name: wp_bdb_Complex_Portal
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Complex_Portal
+    description: Property wp:bdbComplexPortal
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbComplexPortal
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbComplexPortal
+    owner: wp_Complex
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Complex
+    range: wp_Complex
+    inlined: true
+    inlined_as_list: true
+  owl_some_Values_From:
+    name: owl_some_Values_From
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/owl_some_Values_From
+    description: Property owl:someValuesFrom
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#someValuesFrom
+    slot_uri: http://www.w3.org/2002/07/owl#someValuesFrom
+    owner: owl_Restriction
+    domain_of:
+    - owl_Restriction
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  void_link_Predicate:
+    name: void_link_Predicate
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/void_link_Predicate
+    description: Property void:linkPredicate
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#linkPredicate
+    slot_uri: http://rdfs.org/ns/void#linkPredicate
+    owner: void_Linkset
+    domain_of:
+    - void_Linkset
+    range: owl_Object_Property
+    inlined: true
+    inlined_as_list: true
+  oboinowl_in_Subset:
+    name: oboinowl_in_Subset
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/oboinowl_in_Subset
+    description: Property oboinowl:inSubset
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.geneontology.org/formats/oboInOwl#inSubset
+    slot_uri: http://www.geneontology.org/formats/oboInOwl#inSubset
+    owner: owl_Class
+    domain_of:
+    - owl_Class
+    range: owl_Annotation_Property
+    inlined: true
+    inlined_as_list: true
+  dcterms_is_Part_Of:
+    name: dcterms_is_Part_Of
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/dcterms_is_Part_Of
+    description: Property dcterms:isPartOf
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/dc/terms/isPartOf
+    slot_uri: http://purl.org/dc/terms/isPartOf
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Metabolite
+    - wp_Protein
+    - wp_Rna
+    - wp_Binding
+    - wp_Complex_Binding
+    - wp_Interaction
+    - gpml_Anchor
+    - gpml_Comment
+    - gpml_Data_Node
+    - gpml_Graphical_Line
+    - gpml_Interaction
+    - gpml_Label
+    - gpml_Point
+    - gpml_Publication_Xref
+    - gpml_shape
+    - wp_Catalysis
+    - wp_Conversion
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    - wp_Publication_Reference
+    - wp_Stimulation
+    - wp_Transcription_Translation
+    - wp_Translocation
+    range: wp_Pathway
+    inlined: true
+    inlined_as_list: true
+  gpml_has_Anchor:
+    name: gpml_has_Anchor
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/gpml_has_Anchor
+    description: Property gpml:hasAnchor
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#hasAnchor
+    slot_uri: http://vocabularies.wikipathways.org/gpml#hasAnchor
+    owner: gpml_Interaction
+    domain_of:
+    - gpml_Graphical_Line
+    - gpml_Interaction
+    range: gpml_Anchor
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Hgnc_Symbol:
+    name: wp_bdb_Hgnc_Symbol
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Hgnc_Symbol
+    description: Property wp:bdbHgncSymbol
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbHgncSymbol
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbHgncSymbol
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Protein
+    - wp_Rna
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  pav_has_Version:
+    name: pav_has_Version
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/pav_has_Version
+    description: Property pav:hasVersion
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/pav/hasVersion
+    slot_uri: http://purl.org/pav/hasVersion
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    range: wp_Pathway
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Kegg_Compound:
+    name: wp_bdb_Kegg_Compound
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Kegg_Compound
+    description: Property wp:bdbKeggCompound
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbKeggCompound
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbKeggCompound
+    owner: wp_Rna
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Metabolite
+    - wp_Rna
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  wp_is_About:
+    name: wp_is_About
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_is_About
+    description: Property wp:isAbout
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#isAbout
+    slot_uri: http://vocabularies.wikipathways.org/wp#isAbout
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Metabolite
+    - wp_Protein
+    - wp_Rna
+    - wp_Binding
+    - wp_Complex_Binding
+    - wp_Interaction
+    - wp_Catalysis
+    - wp_Conversion
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    - wp_Stimulation
+    - wp_Transcription_Translation
+    range: gpml_Interaction
+    inlined: true
+    inlined_as_list: true
+  owl_disjoint_With:
+    name: owl_disjoint_With
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/owl_disjoint_With
+    description: Property owl:disjointWith
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#disjointWith
+    slot_uri: http://www.w3.org/2002/07/owl#disjointWith
+    owner: owl_Class
+    domain_of:
+    - owl_Class
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Uniprot:
+    name: wp_bdb_Uniprot
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Uniprot
+    description: Property wp:bdbUniprot
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbUniprot
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbUniprot
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Protein
+    - wp_Rna
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  foaf_page:
+    name: foaf_page
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/foaf_page
+    description: Property foaf:page
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://xmlns.com/foaf/0.1/page
+    slot_uri: http://xmlns.com/foaf/0.1/page
+    owner: wp_Publication_Reference
+    domain_of:
+    - wp_Publication_Reference
+    range: wp_Publication_Reference
+    inlined: true
+    inlined_as_list: true
+  rdfs_sub_Property_Of:
+    name: rdfs_sub_Property_Of
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/rdfs_sub_Property_Of
+    description: Property rdfs:subPropertyOf
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2000/01/rdf-schema#subPropertyOf
+    slot_uri: http://www.w3.org/2000/01/rdf-schema#subPropertyOf
+    owner: owl_Annotation_Property
+    domain_of:
+    - owl_Annotation_Property
+    range: owl_Annotation_Property
+    inlined: true
+    inlined_as_list: true
+  dcterms_bibliographic_Citation:
+    name: dcterms_bibliographic_Citation
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/dcterms_bibliographic_Citation
+    description: Property dcterms:bibliographicCitation
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/dc/terms/bibliographicCitation
+    slot_uri: http://purl.org/dc/terms/bibliographicCitation
+    owner: wp_Complex
+    domain_of:
+    - wp_Data_Node
+    - wp_Complex
+    - wp_Binding
+    - wp_Complex_Binding
+    - wp_Interaction
+    range: gpml_Publication_Xref
+    inlined: true
+    inlined_as_list: true
+  rdfs_sub_Class_Of:
+    name: rdfs_sub_Class_Of
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/rdfs_sub_Class_Of
+    description: Property rdfs:subClassOf
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2000/01/rdf-schema#subClassOf
+    slot_uri: http://www.w3.org/2000/01/rdf-schema#subClassOf
+    owner: owl_Class
+    domain_of:
+    - owl_Class
+    - owl_Object_Property
+    range: owl_Object_Property
+    inlined: true
+    inlined_as_list: true
+  dc_creator:
+    name: dc_creator
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/dc_creator
+    description: Property dc:creator
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/dc/elements/1.1/creator
+    slot_uri: http://purl.org/dc/elements/1.1/creator
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    range: foaf_Person
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Reactome:
+    name: wp_bdb_Reactome
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Reactome
+    description: Property wp:bdbReactome
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbReactome
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbReactome
+    owner: wp_Protein
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Complex
+    - wp_Metabolite
+    - wp_Protein
+    - wp_Interaction
+    - wp_Directed_Interaction
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  rdf_type:
+    name: rdf_type
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/rdf_type
+    description: Property rdf:type
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    slot_uri: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Metabolite
+    - wp_Protein
+    - wp_Rna
+    - skos_Collection
+    - wp_Binding
+    - wp_Complex_Binding
+    - wp_Interaction
+    - gpml_Anchor
+    - gpml_Comment
+    - gpml_Data_Node
+    - gpml_Graphical_Line
+    - gpml_Interaction
+    - gpml_Label
+    - gpml_Point
+    - gpml_Publication_Xref
+    - gpml_shape
+    - wp_Catalysis
+    - wp_Conversion
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    - wp_Publication_Reference
+    - wp_Stimulation
+    - wp_Transcription_Translation
+    - wp_Translocation
+    - gpml_Group
+    - gpml_State
+    - gpml_Info_Box
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  wp_participants:
+    name: wp_participants
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_participants
+    description: Property wp:participants
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#participants
+    slot_uri: http://vocabularies.wikipathways.org/wp#participants
+    owner: wp_Inhibition
+    domain_of:
+    - wp_Data_Node
+    - wp_Complex
+    - wp_Binding
+    - wp_Complex_Binding
+    - wp_Interaction
+    - wp_Catalysis
+    - wp_Conversion
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    - wp_Stimulation
+    - wp_Transcription_Translation
+    - wp_Translocation
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_Entrez_Gene:
+    name: wp_bdb_Entrez_Gene
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_Entrez_Gene
+    description: Property wp:bdbEntrezGene
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbEntrezGene
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbEntrezGene
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Protein
+    - wp_Rna
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  owl_on_Property:
+    name: owl_on_Property
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/owl_on_Property
+    description: Property owl:onProperty
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#onProperty
+    slot_uri: http://www.w3.org/2002/07/owl#onProperty
+    owner: owl_Restriction
+    domain_of:
+    - owl_Restriction
+    range: owl_Object_Property
+    inlined: true
+    inlined_as_list: true
+  foaf_img:
+    name: foaf_img
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/foaf_img
+    description: Property foaf:img
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://xmlns.com/foaf/0.1/img
+    slot_uri: http://xmlns.com/foaf/0.1/img
+    owner: wp_Pathway
+    domain_of:
+    - wp_Pathway
+    - skos_Collection
+    range: foaf_Image
+    inlined: true
+    inlined_as_list: true
+  skos_in_Scheme:
+    name: skos_in_Scheme
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/skos_in_Scheme
+    description: Property skos:inScheme
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2004/02/skos/core#inScheme
+    slot_uri: http://www.w3.org/2004/02/skos/core#inScheme
+    owner: owl_Datatype_Property
+    domain_of:
+    - owl_Class
+    - owl_Object_Property
+    - owl_Datatype_Property
+    range: owl_Ontology
+    inlined: true
+    inlined_as_list: true
+  owl_annotated_Source:
+    name: owl_annotated_Source
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/owl_annotated_Source
+    description: Property owl:annotatedSource
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#annotatedSource
+    slot_uri: http://www.w3.org/2002/07/owl#annotatedSource
+    owner: owl_Axiom
+    domain_of:
+    - owl_Axiom
+    range: owl_Class
+    inlined: true
+    inlined_as_list: true
+  rdfs_see_Also:
+    name: rdfs_see_Also
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/rdfs_see_Also
+    description: Property rdfs:seeAlso
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2000/01/rdf-schema#seeAlso
+    slot_uri: http://www.w3.org/2000/01/rdf-schema#seeAlso
+    owner: wp_Data_Node
+    domain_of:
+    - wp_Data_Node
+    - wp_Metabolite
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+  gpml_has_Comment:
+    name: gpml_has_Comment
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/gpml_has_Comment
+    description: Property gpml:hasComment
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#hasComment
+    slot_uri: http://vocabularies.wikipathways.org/gpml#hasComment
+    owner: gpml_Group
+    domain_of:
+    - gpml_Data_Node
+    - gpml_Graphical_Line
+    - gpml_Interaction
+    - gpml_Label
+    - gpml_shape
+    - gpml_Group
+    - gpml_State
+    range: gpml_Comment
+    inlined: true
+    inlined_as_list: true
+  void_subjects_Target:
+    name: void_subjects_Target
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/void_subjects_Target
+    description: Property void:subjectsTarget
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#subjectsTarget
+    slot_uri: http://rdfs.org/ns/void#subjectsTarget
+    owner: void_Linkset
+    domain_of:
+    - void_Linkset
+    range: void_Dataset
+    inlined: true
+    inlined_as_list: true
+  gpml_has_Publication_Xref:
+    name: gpml_has_Publication_Xref
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/gpml_has_Publication_Xref
+    description: Property gpml:hasPublicationXref
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#hasPublicationXref
+    slot_uri: http://vocabularies.wikipathways.org/gpml#hasPublicationXref
+    owner: gpml_Group
+    domain_of:
+    - gpml_Data_Node
+    - gpml_Graphical_Line
+    - gpml_Interaction
+    - gpml_Label
+    - gpml_shape
+    - gpml_Group
+    - gpml_State
+    range: gpml_Publication_Xref
+    inlined: true
+    inlined_as_list: true
+  dcterms_references:
+    name: dcterms_references
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/dcterms_references
+    description: Property dcterms:references
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://purl.org/dc/terms/references
+    slot_uri: http://purl.org/dc/terms/references
+    owner: wp_Pathway
+    domain_of:
+    - wp_Data_Node
+    - wp_Gene_Product
+    - wp_Pathway
+    - wp_Complex
+    - wp_Metabolite
+    - wp_Protein
+    - wp_Rna
+    - skos_Collection
+    - wp_Binding
+    - wp_Interaction
+    - wp_Catalysis
+    - wp_Conversion
+    - wp_Directed_Interaction
+    - wp_Inhibition
+    - wp_Stimulation
+    - wp_Transcription_Translation
+    range: gpml_Publication_Xref
+    inlined: true
+    inlined_as_list: true
+  wp_bdb_In_Ch_IKey:
+    name: wp_bdb_In_Ch_IKey
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/wp_bdb_In_Ch_IKey
+    description: Property wp:bdbInChIKey
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#bdbInChIKey
+    slot_uri: http://vocabularies.wikipathways.org/wp#bdbInChIKey
+    owner: wp_Data_Node
+    domain_of:
+    - wp_Data_Node
+    - wp_Metabolite
+    range: wp_Data_Node
+    inlined: true
+    inlined_as_list: true
+classes:
+  gpml_shape:
+    name: gpml_shape
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlShape
+    description: Class representing gpml_shape
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#shape
+    slots:
+    - dcterms_is_Part_Of
+    - gpml_has_Comment
+    - gpml_has_Publication_Xref
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#shape
+  foaf_Person:
+    name: foaf_Person
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/FoafPerson
+    description: Class representing foaf_Person
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://xmlns.com/foaf/0.1/Person
+    class_uri: http://xmlns.com/foaf/0.1/Person
+  wp_Metabolite:
+    name: wp_Metabolite
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpMetabolite
+    description: Class representing wp_Metabolite
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Metabolite
+    slots:
+    - dc_identifier
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Chemspider
+    - wp_bdb_Hmdb
+    - wp_bdb_In_Ch_IKey
+    - wp_bdb_Kegg_Compound
+    - wp_bdb_Lipid_Maps
+    - wp_bdb_Reactome
+    - wp_is_About
+    - rdf_type
+    - rdfs_see_Also
+    class_uri: http://vocabularies.wikipathways.org/wp#Metabolite
+  gpml_Label:
+    name: gpml_Label
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlLabel
+    description: Class representing gpml_Label
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#Label
+    slots:
+    - dcterms_is_Part_Of
+    - gpml_has_Comment
+    - gpml_has_Publication_Xref
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#Label
+  wp_Interaction:
+    name: wp_Interaction
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpInteraction
+    description: Class representing wp_Interaction
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Interaction
+    slots:
+    - dcterms_bibliographic_Citation
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Hmdb
+    - wp_bdb_Reactome
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Interaction
+  wp_Stimulation:
+    name: wp_Stimulation
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpStimulation
+    description: Class representing wp_Stimulation
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Stimulation
+    slots:
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Stimulation
+  wp_Conversion:
+    name: wp_Conversion
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpConversion
+    description: Class representing wp_Conversion
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Conversion
+    slots:
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Conversion
+  owl_Annotation_Property:
+    name: owl_Annotation_Property
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/OwlAnnotationProperty
+    description: Class representing owl_Annotation_Property
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#AnnotationProperty
+    slots:
+    - rdfs_sub_Property_Of
+    class_uri: http://www.w3.org/2002/07/owl#AnnotationProperty
+  owl_Object_Property:
+    name: owl_Object_Property
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/OwlObjectProperty
+    description: Class representing owl_Object_Property
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#ObjectProperty
+    slots:
+    - rdfs_domain
+    - rdfs_range
+    - rdfs_sub_Class_Of
+    - skos_in_Scheme
+    class_uri: http://www.w3.org/2002/07/owl#ObjectProperty
+  gpml_State:
+    name: gpml_State
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlState
+    description: Class representing gpml_State
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#State
+    slots:
+    - gpml_has_Comment
+    - gpml_has_Publication_Xref
+    - gpml_state_Of
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#State
+  void_Linkset:
+    name: void_Linkset
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/VoidLinkset
+    description: Class representing void_Linkset
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#Linkset
+    slots:
+    - void_link_Predicate
+    - void_subjects_Target
+    class_uri: http://rdfs.org/ns/void#Linkset
+  owl_Ontology:
+    name: owl_Ontology
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/OwlOntology
+    description: Class representing owl_Ontology
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#Ontology
+    class_uri: http://www.w3.org/2002/07/owl#Ontology
+  void_Dataset_Description:
+    name: void_Dataset_Description
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/VoidDatasetDescription
+    description: Class representing void_Dataset_Description
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#DatasetDescription
+    slots:
+    - foaf_primary_Topic
+    class_uri: http://rdfs.org/ns/void#DatasetDescription
+  wp_Gene_Product:
+    name: wp_Gene_Product
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpGeneProduct
+    description: Class representing wp_Gene_Product
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#GeneProduct
+    slots:
+    - dc_creator
+    - dc_identifier
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - pav_has_Version
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Complex_Portal
+    - wp_bdb_Ensembl
+    - wp_bdb_Entrez_Gene
+    - wp_bdb_Hgnc_Symbol
+    - wp_bdb_Kegg_Compound
+    - wp_bdb_Reactome
+    - wp_bdb_Uniprot
+    - wp_is_About
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#GeneProduct
+  gpml_Graphical_Line:
+    name: gpml_Graphical_Line
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlGraphicalLine
+    description: Class representing gpml_Graphical_Line
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#GraphicalLine
+    slots:
+    - dcterms_is_Part_Of
+    - gpml_has_Anchor
+    - gpml_has_Comment
+    - gpml_has_Point
+    - gpml_has_Publication_Xref
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#GraphicalLine
+  owl_Axiom:
+    name: owl_Axiom
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/OwlAxiom
+    description: Class representing owl_Axiom
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#Axiom
+    slots:
+    - oboinowl_has_Synonym_Type
+    - owl_annotated_Property
+    - owl_annotated_Source
+    class_uri: http://www.w3.org/2002/07/owl#Axiom
+  wp_Binding:
+    name: wp_Binding
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpBinding
+    description: Class representing wp_Binding
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Binding
+    slots:
+    - dcterms_bibliographic_Citation
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Binding
+  wp_Catalysis:
+    name: wp_Catalysis
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpCatalysis
+    description: Class representing wp_Catalysis
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Catalysis
+    slots:
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Catalysis
+  wp_Data_Node:
+    name: wp_Data_Node
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpDataNode
+    description: Class representing wp_Data_Node
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#DataNode
+    slots:
+    - dc_creator
+    - dc_identifier
+    - dcterms_bibliographic_Citation
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - pav_has_Version
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Chemspider
+    - wp_bdb_Complex_Portal
+    - wp_bdb_Ensembl
+    - wp_bdb_Entrez_Gene
+    - wp_bdb_Hgnc_Symbol
+    - wp_bdb_Hmdb
+    - wp_bdb_In_Ch_IKey
+    - wp_bdb_Kegg_Compound
+    - wp_bdb_Lipid_Maps
+    - wp_bdb_Reactome
+    - wp_bdb_Uniprot
+    - wp_is_About
+    - wp_participants
+    - rdf_type
+    - rdfs_see_Also
+    class_uri: http://vocabularies.wikipathways.org/wp#DataNode
+  wp_Translocation:
+    name: wp_Translocation
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpTranslocation
+    description: Class representing wp_Translocation
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Translocation
+    slots:
+    - dcterms_is_Part_Of
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Translocation
+  wp_Rna:
+    name: wp_Rna
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpRna
+    description: Class representing wp_Rna
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Rna
+    slots:
+    - dc_identifier
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Ensembl
+    - wp_bdb_Entrez_Gene
+    - wp_bdb_Hgnc_Symbol
+    - wp_bdb_Kegg_Compound
+    - wp_bdb_Uniprot
+    - wp_is_About
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Rna
+  owl_Class:
+    name: owl_Class
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/OwlClass
+    description: Class representing owl_Class
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#Class
+    slots:
+    - iao_0100001
+    - oboinowl_in_Subset
+    - rdfs_sub_Class_Of
+    - owl_disjoint_With
+    - skos_in_Scheme
+    class_uri: http://www.w3.org/2002/07/owl#Class
+  gpml_Publication_Xref:
+    name: gpml_Publication_Xref
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlPublicationXref
+    description: Class representing gpml_Publication_Xref
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#PublicationXref
+    slots:
+    - dcterms_is_Part_Of
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#PublicationXref
+  gpml_Point:
+    name: gpml_Point
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlPoint
+    description: Class representing gpml_Point
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#Point
+    slots:
+    - dcterms_is_Part_Of
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#Point
+  wp_Complex_Binding:
+    name: wp_Complex_Binding
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpComplexBinding
+    description: Class representing wp_Complex_Binding
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#ComplexBinding
+    slots:
+    - dcterms_bibliographic_Citation
+    - dcterms_is_Part_Of
+    - wp_is_About
+    - wp_participants
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#ComplexBinding
+  wp_Publication_Reference:
+    name: wp_Publication_Reference
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpPublicationReference
+    description: Class representing wp_Publication_Reference
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#PublicationReference
+    slots:
+    - dcterms_is_Part_Of
+    - cito_cites
+    - rdf_type
+    - foaf_page
+    class_uri: http://vocabularies.wikipathways.org/wp#PublicationReference
+  gpml_Interaction:
+    name: gpml_Interaction
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlInteraction
+    description: Class representing gpml_Interaction
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#Interaction
+    slots:
+    - dcterms_is_Part_Of
+    - gpml_has_Anchor
+    - gpml_has_Comment
+    - gpml_has_Point
+    - gpml_has_Publication_Xref
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#Interaction
+  gpml_Data_Node:
+    name: gpml_Data_Node
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlDataNode
+    description: Class representing gpml_Data_Node
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#DataNode
+    slots:
+    - dcterms_is_Part_Of
+    - gpml_has_Comment
+    - gpml_has_Publication_Xref
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#DataNode
+  owl_Restriction:
+    name: owl_Restriction
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/OwlRestriction
+    description: Class representing owl_Restriction
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#Restriction
+    slots:
+    - owl_on_Property
+    - owl_some_Values_From
+    class_uri: http://www.w3.org/2002/07/owl#Restriction
+  wp_Directed_Interaction:
+    name: wp_Directed_Interaction
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpDirectedInteraction
+    description: Class representing wp_Directed_Interaction
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#DirectedInteraction
+    slots:
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Hmdb
+    - wp_bdb_Reactome
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#DirectedInteraction
+  gpml_Comment:
+    name: gpml_Comment
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlComment
+    description: Class representing gpml_Comment
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#Comment
+    slots:
+    - dcterms_is_Part_Of
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#Comment
+  wp_Complex:
+    name: wp_Complex
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpComplex
+    description: Class representing wp_Complex
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Complex
+    slots:
+    - dc_identifier
+    - dcterms_bibliographic_Citation
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_bdb_Complex_Portal
+    - wp_bdb_Ensembl
+    - wp_bdb_Entrez_Gene
+    - wp_bdb_Hgnc_Symbol
+    - wp_bdb_Reactome
+    - wp_bdb_Uniprot
+    - wp_is_About
+    - wp_participants
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Complex
+  gpml_Group:
+    name: gpml_Group
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlGroup
+    description: Class representing gpml_Group
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#Group
+    slots:
+    - gpml_has_Comment
+    - gpml_has_Publication_Xref
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#Group
+  foaf_Image:
+    name: foaf_Image
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/FoafImage
+    description: Class representing foaf_Image
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://xmlns.com/foaf/0.1/Image
+    class_uri: http://xmlns.com/foaf/0.1/Image
+  owl_Datatype_Property:
+    name: owl_Datatype_Property
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/OwlDatatypeProperty
+    description: Class representing owl_Datatype_Property
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2002/07/owl#DatatypeProperty
+    slots:
+    - rdfs_range
+    - skos_in_Scheme
+    class_uri: http://www.w3.org/2002/07/owl#DatatypeProperty
+  gpml_Info_Box:
+    name: gpml_Info_Box
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlInfoBox
+    description: Class representing gpml_Info_Box
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#InfoBox
+    slots:
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#InfoBox
+  wp_Transcription_Translation:
+    name: wp_Transcription_Translation
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpTranscriptionTranslation
+    description: Class representing wp_Transcription_Translation
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#TranscriptionTranslation
+    slots:
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#TranscriptionTranslation
+  void_Dataset:
+    name: void_Dataset
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/VoidDataset
+    description: Class representing void_Dataset
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://rdfs.org/ns/void#Dataset
+    slots:
+    - dcterms_subject
+    - void_example_Resource
+    - void_subset
+    - void_vocabulary
+    - dcat_distribution
+    class_uri: http://rdfs.org/ns/void#Dataset
+  gpml_Anchor:
+    name: gpml_Anchor
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/GpmlAnchor
+    description: Class representing gpml_Anchor
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/gpml#Anchor
+    slots:
+    - dcterms_is_Part_Of
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/gpml#Anchor
+  wp_Inhibition:
+    name: wp_Inhibition
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpInhibition
+    description: Class representing wp_Inhibition
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Inhibition
+    slots:
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Hmdb
+    - wp_is_About
+    - wp_participants
+    - wp_source
+    - wp_target
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Inhibition
+  dcat_Distribution:
+    name: dcat_Distribution
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/DcatDistribution
+    description: Class representing dcat_Distribution
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/ns/dcat#Distribution
+    class_uri: http://www.w3.org/ns/dcat#Distribution
+  wp_Protein:
+    name: wp_Protein
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpProtein
+    description: Class representing wp_Protein
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Protein
+    slots:
+    - dc_identifier
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - wp_bdb_Ch_EBI
+    - wp_bdb_Ensembl
+    - wp_bdb_Entrez_Gene
+    - wp_bdb_Hgnc_Symbol
+    - wp_bdb_Reactome
+    - wp_bdb_Uniprot
+    - wp_is_About
+    - rdf_type
+    class_uri: http://vocabularies.wikipathways.org/wp#Protein
+  skos_Collection:
+    name: skos_Collection
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/SkosCollection
+    description: Class representing skos_Collection
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://www.w3.org/2004/02/skos/core#Collection
+    slots:
+    - dc_identifier
+    - dcterms_references
+    - cito_cites
+    - wp_disease_Ontology_Tag
+    - wp_ontology_Tag
+    - wp_pathway_Ontology_Tag
+    - rdf_type
+    - foaf_img
+    class_uri: http://www.w3.org/2004/02/skos/core#Collection
+  wp_Pathway:
+    name: wp_Pathway
+    definition_uri: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/WpPathway
+    description: Class representing wp_Pathway
+    from_schema: http://rdf.wikipathways.org/.well-known/schema/wikipathways_shacl/
+    mappings:
+    - http://vocabularies.wikipathways.org/wp#Pathway
+    slots:
+    - dc_creator
+    - dc_identifier
+    - dcterms_is_Part_Of
+    - dcterms_references
+    - pav_has_Version
+    - cito_cites
+    - wp_bdb_Ensembl
+    - wp_bdb_Entrez_Gene
+    - wp_bdb_Hgnc_Symbol
+    - wp_bdb_Uniprot
+    - wp_disease_Ontology_Tag
+    - wp_is_About
+    - wp_ontology_Tag
+    - wp_pathway_Ontology_Tag
+    - rdf_type
+    - foaf_img
+    class_uri: http://vocabularies.wikipathways.org/wp#Pathway
+metamodel_version: 1.7.0
+generation_date: '2026-02-05T15:49:27'

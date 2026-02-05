@@ -1,0 +1,3055 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "iao": "http://purl.obolibrary.org/obo/IAO_",
+    "wp": "http://vocabularies.wikipathways.org/wp#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "gpml": "http://vocabularies.wikipathways.org/gpml#",
+    "void": "http://rdfs.org/ns/void#",
+    "pav": "http://purl.org/pav/",
+    "cito": "http://purl.org/spar/cito/",
+    "oboinowl": "http://www.geneontology.org/formats/oboInOwl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
+  "@graph": [
+    {
+      "@id": "owl:Class",
+      "iao:0100001": {
+        "@id": "owl:Class"
+      },
+      "oboinowl:inSubset": {
+        "@id": "owl:AnnotationProperty"
+      },
+      "rdfs:subClassOf": {
+        "@id": "owl:Class"
+      },
+      "owl:disjointWith": {
+        "@id": "owl:Class"
+      },
+      "skos:inScheme": [
+        {
+          "@id": "owl:Ontology"
+        },
+        {
+          "@id": "skos:ConceptScheme"
+        }
+      ]
+    },
+    {
+      "@id": "wp:DataNode",
+      "dc:creator": {
+        "@id": "foaf:Person"
+      },
+      "dc:identifier": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "dcterms:bibliographicCitation": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "wp:Translocation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "pav:hasVersion": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbChemspider": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbComplexPortal": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        }
+      ],
+      "wp:bdbEnsembl": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbEntrezGene": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbHgncSymbol": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbHmdb": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbInChIKey": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbKeggCompound": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbLipidMaps": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbReactome": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbUniprot": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:isAbout": [
+        {
+          "@id": "gpml:DataNode"
+        },
+        {
+          "@id": "gpml:Group"
+        }
+      ],
+      "wp:participants": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      },
+      "rdfs:seeAlso": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ]
+    },
+    {
+      "@id": "wp:GeneProduct",
+      "dc:creator": {
+        "@id": "foaf:Person"
+      },
+      "dc:identifier": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "pav:hasVersion": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbComplexPortal": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        }
+      ],
+      "wp:bdbEnsembl": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbEntrezGene": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbHgncSymbol": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbKeggCompound": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbReactome": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        }
+      ],
+      "wp:bdbUniprot": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:DataNode"
+      },
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:Pathway",
+      "dc:creator": {
+        "@id": "foaf:Person"
+      },
+      "dc:identifier": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "pav:hasVersion": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "cito:cites": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbEnsembl": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbEntrezGene": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbHgncSymbol": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        }
+      ],
+      "wp:bdbUniprot": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:diseaseOntologyTag": {
+        "@id": "owl:Class"
+      },
+      "wp:isAbout": {
+        "@id": "gpml:DataNode"
+      },
+      "wp:ontologyTag": {
+        "@id": "owl:Class"
+      },
+      "wp:pathwayOntologyTag": {
+        "@id": "owl:Class"
+      },
+      "rdf:type": {
+        "@id": "owl:Class"
+      },
+      "foaf:img": {
+        "@id": "foaf:Image"
+      }
+    },
+    {
+      "@id": "wp:Complex",
+      "dc:identifier": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "dcterms:bibliographicCitation": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbComplexPortal": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        }
+      ],
+      "wp:bdbEnsembl": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbEntrezGene": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbHgncSymbol": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        }
+      ],
+      "wp:bdbReactome": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbUniprot": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:isAbout": [
+        {
+          "@id": "gpml:DataNode"
+        },
+        {
+          "@id": "gpml:Group"
+        }
+      ],
+      "wp:participants": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:Metabolite",
+      "dc:identifier": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "wp:Translocation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbChemspider": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbHmdb": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbInChIKey": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbKeggCompound": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbLipidMaps": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbReactome": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:DataNode"
+      },
+      "rdf:type": {
+        "@id": "owl:Class"
+      },
+      "rdfs:seeAlso": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ]
+    },
+    {
+      "@id": "wp:Protein",
+      "dc:identifier": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbEnsembl": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbEntrezGene": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbHgncSymbol": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbReactome": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Protein"
+        }
+      ],
+      "wp:bdbUniprot": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:DataNode"
+      },
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:Rna",
+      "dc:identifier": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbEnsembl": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbEntrezGene": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbHgncSymbol": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:bdbKeggCompound": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbUniprot": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:DataNode"
+      },
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "skos:Collection",
+      "dc:identifier": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Pathway"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "cito:cites": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:diseaseOntologyTag": {
+        "@id": "owl:Class"
+      },
+      "wp:ontologyTag": {
+        "@id": "owl:Class"
+      },
+      "wp:pathwayOntologyTag": {
+        "@id": "owl:Class"
+      },
+      "rdf:type": {
+        "@id": "owl:Class"
+      },
+      "foaf:img": {
+        "@id": "foaf:Image"
+      }
+    },
+    {
+      "@id": "wp:Binding",
+      "dcterms:bibliographicCitation": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:isAbout": [
+        {
+          "@id": "gpml:Group"
+        },
+        {
+          "@id": "gpml:Interaction"
+        }
+      ],
+      "wp:participants": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:ComplexBinding",
+      "dcterms:bibliographicCitation": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:Group"
+      },
+      "wp:participants": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:Interaction",
+      "dcterms:bibliographicCitation": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbHmdb": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbReactome": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Pathway"
+        }
+      ],
+      "wp:isAbout": [
+        {
+          "@id": "gpml:Group"
+        },
+        {
+          "@id": "gpml:Interaction"
+        }
+      ],
+      "wp:participants": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:Anchor",
+      "dcterms:isPartOf": [
+        {
+          "@id": "gpml:GraphicalLine"
+        },
+        {
+          "@id": "gpml:Interaction"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:Comment",
+      "dcterms:isPartOf": [
+        {
+          "@id": "gpml:DataNode"
+        },
+        {
+          "@id": "gpml:GraphicalLine"
+        },
+        {
+          "@id": "gpml:Group"
+        },
+        {
+          "@id": "gpml:Interaction"
+        },
+        {
+          "@id": "gpml:Label"
+        },
+        {
+          "@id": "gpml:State"
+        },
+        {
+          "@id": "gpml:shape"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:DataNode",
+      "dcterms:isPartOf": {
+        "@id": "gpml:Group"
+      },
+      "gpml:hasComment": {
+        "@id": "gpml:Comment"
+      },
+      "gpml:hasPublicationXref": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:GraphicalLine",
+      "dcterms:isPartOf": {
+        "@id": "gpml:Group"
+      },
+      "gpml:hasAnchor": {
+        "@id": "gpml:Anchor"
+      },
+      "gpml:hasComment": {
+        "@id": "gpml:Comment"
+      },
+      "gpml:hasPoint": {
+        "@id": "gpml:Point"
+      },
+      "gpml:hasPublicationXref": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:Interaction",
+      "dcterms:isPartOf": {
+        "@id": "gpml:Group"
+      },
+      "gpml:hasAnchor": {
+        "@id": "gpml:Anchor"
+      },
+      "gpml:hasComment": {
+        "@id": "gpml:Comment"
+      },
+      "gpml:hasPoint": {
+        "@id": "gpml:Point"
+      },
+      "gpml:hasPublicationXref": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:Label",
+      "dcterms:isPartOf": {
+        "@id": "gpml:Group"
+      },
+      "gpml:hasComment": {
+        "@id": "gpml:Comment"
+      },
+      "gpml:hasPublicationXref": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:Point",
+      "dcterms:isPartOf": [
+        {
+          "@id": "gpml:GraphicalLine"
+        },
+        {
+          "@id": "gpml:Interaction"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:PublicationXref",
+      "dcterms:isPartOf": [
+        {
+          "@id": "gpml:DataNode"
+        },
+        {
+          "@id": "gpml:GraphicalLine"
+        },
+        {
+          "@id": "gpml:Group"
+        },
+        {
+          "@id": "gpml:Interaction"
+        },
+        {
+          "@id": "gpml:Label"
+        },
+        {
+          "@id": "gpml:State"
+        },
+        {
+          "@id": "gpml:shape"
+        },
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:shape",
+      "dcterms:isPartOf": {
+        "@id": "gpml:Group"
+      },
+      "gpml:hasComment": {
+        "@id": "gpml:Comment"
+      },
+      "gpml:hasPublicationXref": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:DatatypeProperty"
+      }
+    },
+    {
+      "@id": "wp:Catalysis",
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:Interaction"
+      },
+      "wp:participants": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:Conversion",
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:Interaction"
+      },
+      "wp:participants": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:DirectedInteraction",
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbHmdb": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbReactome": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Pathway"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:Interaction"
+      },
+      "wp:participants": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:Inhibition",
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:bdbChEBI": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:bdbHmdb": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:Interaction"
+      },
+      "wp:participants": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:PublicationReference",
+      "dcterms:isPartOf": [
+        {
+          "@id": "gpml:DataNode"
+        },
+        {
+          "@id": "gpml:GraphicalLine"
+        },
+        {
+          "@id": "gpml:Group"
+        },
+        {
+          "@id": "gpml:Interaction"
+        },
+        {
+          "@id": "gpml:Label"
+        },
+        {
+          "@id": "gpml:State"
+        },
+        {
+          "@id": "gpml:shape"
+        },
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Catalysis"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "cito:cites": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Pathway"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      },
+      "foaf:page": {
+        "@id": "wp:PublicationReference"
+      }
+    },
+    {
+      "@id": "wp:Stimulation",
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:Interaction"
+      },
+      "wp:participants": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Binding"
+        },
+        {
+          "@id": "wp:Complex"
+        },
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Inhibition"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        },
+        {
+          "@id": "wp:Stimulation"
+        },
+        {
+          "@id": "wp:TranscriptionTranslation"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:TranscriptionTranslation",
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "dcterms:references": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "wp:isAbout": {
+        "@id": "gpml:Interaction"
+      },
+      "wp:participants": [
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:Conversion"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:DirectedInteraction"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Interaction"
+        },
+        {
+          "@id": "wp:Metabolite"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:Rna"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "wp:Translocation",
+      "dcterms:isPartOf": [
+        {
+          "@id": "wp:Pathway"
+        },
+        {
+          "@id": "skos:Collection"
+        }
+      ],
+      "wp:participants": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:source": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "wp:target": [
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:Metabolite"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "void:Dataset",
+      "dcterms:subject": {
+        "@id": "owl:Class"
+      },
+      "void:exampleResource": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:DataNode"
+        },
+        {
+          "@id": "wp:GeneProduct"
+        },
+        {
+          "@id": "wp:Protein"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "void:subset": [
+        {
+          "@id": "void:Dataset"
+        },
+        {
+          "@id": "void:Linkset"
+        }
+      ],
+      "void:vocabulary": [
+        {
+          "@id": "owl:Ontology"
+        },
+        {
+          "@id": "skos:ConceptScheme"
+        }
+      ],
+      "dcat:distribution": {
+        "@id": "dcat:Distribution"
+      }
+    },
+    {
+      "@id": "void:Linkset",
+      "void:linkPredicate": {
+        "@id": "owl:ObjectProperty"
+      },
+      "void:subjectsTarget": {
+        "@id": "void:Dataset"
+      }
+    },
+    {
+      "@id": "gpml:Group",
+      "gpml:hasComment": {
+        "@id": "gpml:Comment"
+      },
+      "gpml:hasPublicationXref": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "gpml:State",
+      "gpml:hasComment": {
+        "@id": "gpml:Comment"
+      },
+      "gpml:hasPublicationXref": [
+        {
+          "@id": "gpml:PublicationXref"
+        },
+        {
+          "@id": "wp:PublicationReference"
+        }
+      ],
+      "gpml:stateOf": {
+        "@id": "gpml:DataNode"
+      },
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "owl:Axiom",
+      "oboinowl:hasSynonymType": {
+        "@id": "owl:AnnotationProperty"
+      },
+      "owl:annotatedProperty": {
+        "@id": "owl:AnnotationProperty"
+      },
+      "owl:annotatedSource": [
+        {
+          "@id": "owl:Class"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ]
+    },
+    {
+      "@id": "gpml:InfoBox",
+      "rdf:type": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "owl:Class"
+      },
+      "rdfs:range": {
+        "@id": "owl:Class"
+      },
+      "rdfs:subClassOf": {
+        "@id": "owl:ObjectProperty"
+      },
+      "skos:inScheme": [
+        {
+          "@id": "owl:Ontology"
+        },
+        {
+          "@id": "skos:ConceptScheme"
+        }
+      ]
+    },
+    {
+      "@id": "owl:DatatypeProperty",
+      "rdfs:range": {
+        "@id": "owl:Class"
+      },
+      "skos:inScheme": [
+        {
+          "@id": "owl:Ontology"
+        },
+        {
+          "@id": "skos:ConceptScheme"
+        }
+      ]
+    },
+    {
+      "@id": "owl:AnnotationProperty",
+      "rdfs:subPropertyOf": {
+        "@id": "owl:AnnotationProperty"
+      }
+    },
+    {
+      "@id": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "owl:ObjectProperty"
+      },
+      "owl:someValuesFrom": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "void:DatasetDescription",
+      "foaf:primaryTopic": {
+        "@id": "void:Dataset"
+      }
+    }
+  ]
+}

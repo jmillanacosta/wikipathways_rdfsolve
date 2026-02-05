@@ -1,0 +1,548 @@
+- Anchor gpml:Anchor:
+  - dcterms:isPartOf:
+    - anchor_is_part_of: GraphicalLine
+  - rdf:type:
+    - anchor_type: Class
+- Comment gpml:Comment:
+  - dcterms:isPartOf:
+    - comment_is_part_of: GpmlDataNode
+  - rdf:type:
+    - comment_type: Class
+- GpmlDataNode gpml:DataNode:
+  - dcterms:isPartOf:
+    - gpml_data_node_is_part_of: Group
+  - gpml:hasComment:
+    - gpml_data_node_has_comment: Comment
+  - gpml:hasPublicationXref:
+    - gpml_data_node_has_publication_xref: PublicationXref
+  - rdf:type:
+    - gpml_data_node_type: Class
+- GraphicalLine gpml:GraphicalLine:
+  - dcterms:isPartOf:
+    - graphical_line_is_part_of: Group
+  - gpml:hasAnchor:
+    - graphical_line_has_anchor: Anchor
+  - gpml:hasComment:
+    - graphical_line_has_comment: Comment
+  - gpml:hasPoint:
+    - graphical_line_has_point: Point
+  - gpml:hasPublicationXref:
+    - graphical_line_has_publication_xref: PublicationXref
+  - rdf:type:
+    - graphical_line_type: Class
+- Group gpml:Group:
+  - gpml:hasComment:
+    - group_has_comment: Comment
+  - gpml:hasPublicationXref:
+    - group_has_publication_xref: PublicationXref
+  - rdf:type:
+    - group_type: Class
+- InfoBox gpml:InfoBox:
+  - rdf:type:
+    - info_box_type: Class
+- GpmlInteraction gpml:Interaction:
+  - dcterms:isPartOf:
+    - gpml_interaction_is_part_of: Group
+  - gpml:hasAnchor:
+    - gpml_interaction_has_anchor: Anchor
+  - gpml:hasComment:
+    - gpml_interaction_has_comment: Comment
+  - gpml:hasPoint:
+    - gpml_interaction_has_point: Point
+  - gpml:hasPublicationXref:
+    - gpml_interaction_has_publication_xref: PublicationXref
+  - rdf:type:
+    - gpml_interaction_type: Class
+- Label gpml:Label:
+  - dcterms:isPartOf:
+    - label_is_part_of: Group
+  - gpml:hasComment:
+    - label_has_comment: Comment
+  - gpml:hasPublicationXref:
+    - label_has_publication_xref: PublicationXref
+  - rdf:type:
+    - label_type: Class
+- Point gpml:Point:
+  - dcterms:isPartOf:
+    - point_is_part_of: GraphicalLine
+  - rdf:type:
+    - point_type: Class
+- PublicationXref gpml:PublicationXref:
+  - dcterms:isPartOf:
+    - publication_xref_is_part_of: GpmlDataNode
+  - rdf:type:
+    - publication_xref_type: Class
+- State gpml:State:
+  - gpml:hasComment:
+    - state_has_comment: Comment
+  - gpml:hasPublicationXref:
+    - state_has_publication_xref: PublicationXref
+  - gpml:stateOf:
+    - state_state_of: GpmlDataNode
+  - rdf:type:
+    - state_type: Class
+- Shape gpml:shape:
+  - dcterms:isPartOf:
+    - shape_is_part_of: Group
+  - gpml:hasComment:
+    - shape_has_comment: Comment
+  - gpml:hasPublicationXref:
+    - shape_has_publication_xref: PublicationXref
+  - rdf:type:
+    - shape_type: DatatypeProperty
+- AnnotationProperty owl:AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+- Axiom owl:Axiom:
+  - oboinowl:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+- Class owl:Class:
+  - iao:0100001:
+    - class_0100001: Class
+  - oboinowl:inSubset:
+    - class_in_subset: AnnotationProperty
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - skos:inScheme:
+    - class_in_scheme: Ontology
+- DatatypeProperty owl:DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: Class
+  - skos:inScheme:
+    - datatype_property_in_scheme: Ontology
+- ObjectProperty owl:ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:subClassOf:
+    - object_property_sub_class_of: ObjectProperty
+  - skos:inScheme:
+    - object_property_in_scheme: Ontology
+- Restriction owl:Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+- Collection skos:Collection:
+  - dc:identifier:
+    - collection_identifier: WpDataNode
+  - dcterms:references:
+    - collection_references: PublicationXref
+  - cito:cites:
+    - collection_cites: PublicationXref
+  - wp:diseaseOntologyTag:
+    - collection_disease_ontology_tag: Class
+  - wp:ontologyTag:
+    - collection_ontology_tag: Class
+  - wp:pathwayOntologyTag:
+    - collection_pathway_ontology_tag: Class
+  - rdf:type:
+    - collection_type: Class
+  - foaf:img:
+    - collection_img: Image
+- Dataset void:Dataset:
+  - dcterms:subject:
+    - dataset_subject: Class
+  - void:exampleResource:
+    - dataset_example_resource: PublicationXref
+  - void:subset:
+    - dataset_subset: Dataset
+  - void:vocabulary:
+    - dataset_vocabulary: Ontology
+  - dcat:distribution:
+    - dataset_distribution: Distribution
+- DatasetDescription void:DatasetDescription:
+  - foaf:primaryTopic:
+    - dataset_description_primary_topic: Dataset
+- Linkset void:Linkset:
+  - void:linkPredicate:
+    - linkset_link_predicate: ObjectProperty
+  - void:subjectsTarget:
+    - linkset_subjects_target: Dataset
+- Binding wp:Binding:
+  - dcterms:bibliographicCitation:
+    - binding_bibliographic_citation: PublicationXref
+  - dcterms:isPartOf:
+    - binding_is_part_of: Pathway
+  - dcterms:references:
+    - binding_references: PublicationXref
+  - wp:isAbout:
+    - binding_is_about: Group
+  - wp:participants:
+    - binding_participants: Binding
+  - wp:source:
+    - binding_source: Complex
+  - wp:target:
+    - binding_target: Binding
+  - rdf:type:
+    - binding_type: Class
+- Catalysis wp:Catalysis:
+  - dcterms:isPartOf:
+    - catalysis_is_part_of: Pathway
+  - dcterms:references:
+    - catalysis_references: PublicationXref
+  - wp:isAbout:
+    - catalysis_is_about: GpmlInteraction
+  - wp:participants:
+    - catalysis_participants: Binding
+  - wp:source:
+    - catalysis_source: Complex
+  - wp:target:
+    - catalysis_target: Binding
+  - rdf:type:
+    - catalysis_type: Class
+- Complex wp:Complex:
+  - dc:identifier:
+    - complex_identifier: Complex
+  - dcterms:bibliographicCitation:
+    - complex_bibliographic_citation: PublicationXref
+  - dcterms:isPartOf:
+    - complex_is_part_of: Binding
+  - dcterms:references:
+    - complex_references: PublicationXref
+  - wp:bdbComplexPortal:
+    - complex_bdb_complex_portal: Complex
+  - wp:bdbEnsembl:
+    - complex_bdb_ensembl: Complex
+  - wp:bdbEntrezGene:
+    - complex_bdb_entrez_gene: Complex
+  - wp:bdbHgncSymbol:
+    - complex_bdb_hgnc_symbol: WpDataNode
+  - wp:bdbReactome:
+    - complex_bdb_reactome: Complex
+  - wp:bdbUniprot:
+    - complex_bdb_uniprot: Complex
+  - wp:isAbout:
+    - complex_is_about: GpmlDataNode
+  - wp:participants:
+    - complex_participants: Complex
+  - rdf:type:
+    - complex_type: Class
+- ComplexBinding wp:ComplexBinding:
+  - dcterms:bibliographicCitation:
+    - complex_binding_bibliographic_citation: PublicationXref
+  - dcterms:isPartOf:
+    - complex_binding_is_part_of: Pathway
+  - wp:isAbout:
+    - complex_binding_is_about: Group
+  - wp:participants:
+    - complex_binding_participants: Complex
+  - rdf:type:
+    - complex_binding_type: Class
+- Conversion wp:Conversion:
+  - dcterms:isPartOf:
+    - conversion_is_part_of: Pathway
+  - dcterms:references:
+    - conversion_references: PublicationXref
+  - wp:isAbout:
+    - conversion_is_about: GpmlInteraction
+  - wp:participants:
+    - conversion_participants: Binding
+  - wp:source:
+    - conversion_source: Complex
+  - wp:target:
+    - conversion_target: Binding
+  - rdf:type:
+    - conversion_type: Class
+- WpDataNode wp:DataNode:
+  - dc:creator:
+    - wp_data_node_creator: Person
+  - dc:identifier:
+    - wp_data_node_identifier: Complex
+  - dcterms:bibliographicCitation:
+    - wp_data_node_bibliographic_citation: PublicationXref
+  - dcterms:isPartOf:
+    - wp_data_node_is_part_of: Binding
+  - dcterms:references:
+    - wp_data_node_references: PublicationXref
+  - pav:hasVersion:
+    - wp_data_node_has_version: Pathway
+  - wp:bdbChEBI:
+    - wp_data_node_bdb_ch_ebi: WpDataNode
+  - wp:bdbChemspider:
+    - wp_data_node_bdb_chemspider: WpDataNode
+  - wp:bdbComplexPortal:
+    - wp_data_node_bdb_complex_portal: Complex
+  - wp:bdbEnsembl:
+    - wp_data_node_bdb_ensembl: Complex
+  - wp:bdbEntrezGene:
+    - wp_data_node_bdb_entrez_gene: Complex
+  - wp:bdbHgncSymbol:
+    - wp_data_node_bdb_hgnc_symbol: WpDataNode
+  - wp:bdbHmdb:
+    - wp_data_node_bdb_hmdb: WpDataNode
+  - wp:bdbInChIKey:
+    - wp_data_node_bdb_in_ch_ikey: WpDataNode
+  - wp:bdbKeggCompound:
+    - wp_data_node_bdb_kegg_compound: WpDataNode
+  - wp:bdbLipidMaps:
+    - wp_data_node_bdb_lipid_maps: WpDataNode
+  - wp:bdbReactome:
+    - wp_data_node_bdb_reactome: Complex
+  - wp:bdbUniprot:
+    - wp_data_node_bdb_uniprot: Complex
+  - wp:isAbout:
+    - wp_data_node_is_about: GpmlDataNode
+  - wp:participants:
+    - wp_data_node_participants: Complex
+  - rdf:type:
+    - wp_data_node_type: Class
+  - rdfs:seeAlso:
+    - wp_data_node_see_also: WpDataNode
+- DirectedInteraction wp:DirectedInteraction:
+  - dcterms:isPartOf:
+    - directed_interaction_is_part_of: Pathway
+  - dcterms:references:
+    - directed_interaction_references: PublicationXref
+  - wp:bdbChEBI:
+    - directed_interaction_bdb_ch_ebi: WpDataNode
+  - wp:bdbHmdb:
+    - directed_interaction_bdb_hmdb: WpDataNode
+  - wp:bdbReactome:
+    - directed_interaction_bdb_reactome: WpDataNode
+  - wp:isAbout:
+    - directed_interaction_is_about: GpmlInteraction
+  - wp:participants:
+    - directed_interaction_participants: Binding
+  - wp:source:
+    - directed_interaction_source: Complex
+  - wp:target:
+    - directed_interaction_target: Binding
+  - rdf:type:
+    - directed_interaction_type: Class
+- GeneProduct wp:GeneProduct:
+  - dc:creator:
+    - gene_product_creator: Person
+  - dc:identifier:
+    - gene_product_identifier: Complex
+  - dcterms:isPartOf:
+    - gene_product_is_part_of: Binding
+  - dcterms:references:
+    - gene_product_references: PublicationXref
+  - pav:hasVersion:
+    - gene_product_has_version: Pathway
+  - wp:bdbChEBI:
+    - gene_product_bdb_ch_ebi: WpDataNode
+  - wp:bdbComplexPortal:
+    - gene_product_bdb_complex_portal: Complex
+  - wp:bdbEnsembl:
+    - gene_product_bdb_ensembl: Complex
+  - wp:bdbEntrezGene:
+    - gene_product_bdb_entrez_gene: Complex
+  - wp:bdbHgncSymbol:
+    - gene_product_bdb_hgnc_symbol: WpDataNode
+  - wp:bdbKeggCompound:
+    - gene_product_bdb_kegg_compound: WpDataNode
+  - wp:bdbReactome:
+    - gene_product_bdb_reactome: WpDataNode
+  - wp:bdbUniprot:
+    - gene_product_bdb_uniprot: Complex
+  - wp:isAbout:
+    - gene_product_is_about: GpmlDataNode
+  - rdf:type:
+    - gene_product_type: Class
+- Inhibition wp:Inhibition:
+  - dcterms:isPartOf:
+    - inhibition_is_part_of: Pathway
+  - dcterms:references:
+    - inhibition_references: PublicationXref
+  - wp:bdbChEBI:
+    - inhibition_bdb_ch_ebi: WpDataNode
+  - wp:bdbHmdb:
+    - inhibition_bdb_hmdb: WpDataNode
+  - wp:isAbout:
+    - inhibition_is_about: GpmlInteraction
+  - wp:participants:
+    - inhibition_participants: Binding
+  - wp:source:
+    - inhibition_source: Complex
+  - wp:target:
+    - inhibition_target: Binding
+  - rdf:type:
+    - inhibition_type: Class
+- WpInteraction wp:Interaction:
+  - dcterms:bibliographicCitation:
+    - wp_interaction_bibliographic_citation: PublicationXref
+  - dcterms:isPartOf:
+    - wp_interaction_is_part_of: Pathway
+  - dcterms:references:
+    - wp_interaction_references: PublicationXref
+  - wp:bdbChEBI:
+    - wp_interaction_bdb_ch_ebi: WpDataNode
+  - wp:bdbHmdb:
+    - wp_interaction_bdb_hmdb: WpDataNode
+  - wp:bdbReactome:
+    - wp_interaction_bdb_reactome: WpDataNode
+  - wp:isAbout:
+    - wp_interaction_is_about: Group
+  - wp:participants:
+    - wp_interaction_participants: Binding
+  - wp:source:
+    - wp_interaction_source: Complex
+  - wp:target:
+    - wp_interaction_target: Binding
+  - rdf:type:
+    - wp_interaction_type: Class
+- Metabolite wp:Metabolite:
+  - dc:identifier:
+    - metabolite_identifier: WpDataNode
+  - dcterms:isPartOf:
+    - metabolite_is_part_of: Binding
+  - dcterms:references:
+    - metabolite_references: PublicationXref
+  - wp:bdbChEBI:
+    - metabolite_bdb_ch_ebi: WpDataNode
+  - wp:bdbChemspider:
+    - metabolite_bdb_chemspider: WpDataNode
+  - wp:bdbHmdb:
+    - metabolite_bdb_hmdb: WpDataNode
+  - wp:bdbInChIKey:
+    - metabolite_bdb_in_ch_ikey: WpDataNode
+  - wp:bdbKeggCompound:
+    - metabolite_bdb_kegg_compound: WpDataNode
+  - wp:bdbLipidMaps:
+    - metabolite_bdb_lipid_maps: WpDataNode
+  - wp:bdbReactome:
+    - metabolite_bdb_reactome: WpDataNode
+  - wp:isAbout:
+    - metabolite_is_about: GpmlDataNode
+  - rdf:type:
+    - metabolite_type: Class
+  - rdfs:seeAlso:
+    - metabolite_see_also: WpDataNode
+- Pathway wp:Pathway:
+  - dc:creator:
+    - pathway_creator: Person
+  - dc:identifier:
+    - pathway_identifier: WpDataNode
+  - dcterms:isPartOf:
+    - pathway_is_part_of: Binding
+  - dcterms:references:
+    - pathway_references: PublicationXref
+  - pav:hasVersion:
+    - pathway_has_version: Pathway
+  - cito:cites:
+    - pathway_cites: PublicationXref
+  - wp:bdbEnsembl:
+    - pathway_bdb_ensembl: WpDataNode
+  - wp:bdbEntrezGene:
+    - pathway_bdb_entrez_gene: WpDataNode
+  - wp:bdbHgncSymbol:
+    - pathway_bdb_hgnc_symbol: WpDataNode
+  - wp:bdbUniprot:
+    - pathway_bdb_uniprot: WpDataNode
+  - wp:diseaseOntologyTag:
+    - pathway_disease_ontology_tag: Class
+  - wp:isAbout:
+    - pathway_is_about: GpmlDataNode
+  - wp:ontologyTag:
+    - pathway_ontology_tag: Class
+  - wp:pathwayOntologyTag:
+    - pathway_pathway_ontology_tag: Class
+  - rdf:type:
+    - pathway_type: Class
+  - foaf:img:
+    - pathway_img: Image
+- Protein wp:Protein:
+  - dc:identifier:
+    - protein_identifier: Complex
+  - dcterms:isPartOf:
+    - protein_is_part_of: Binding
+  - dcterms:references:
+    - protein_references: PublicationXref
+  - wp:bdbChEBI:
+    - protein_bdb_ch_ebi: WpDataNode
+  - wp:bdbEnsembl:
+    - protein_bdb_ensembl: Complex
+  - wp:bdbEntrezGene:
+    - protein_bdb_entrez_gene: Complex
+  - wp:bdbHgncSymbol:
+    - protein_bdb_hgnc_symbol: WpDataNode
+  - wp:bdbReactome:
+    - protein_bdb_reactome: Complex
+  - wp:bdbUniprot:
+    - protein_bdb_uniprot: Complex
+  - wp:isAbout:
+    - protein_is_about: GpmlDataNode
+  - rdf:type:
+    - protein_type: Class
+- PublicationReference wp:PublicationReference:
+  - dcterms:isPartOf:
+    - publication_reference_is_part_of: GpmlDataNode
+  - cito:cites:
+    - publication_reference_cites: WpDataNode
+  - rdf:type:
+    - publication_reference_type: Class
+  - foaf:page:
+    - publication_reference_page: PublicationReference
+- Rna wp:Rna:
+  - dc:identifier:
+    - rna_identifier: WpDataNode
+  - dcterms:isPartOf:
+    - rna_is_part_of: Binding
+  - dcterms:references:
+    - rna_references: PublicationXref
+  - wp:bdbChEBI:
+    - rna_bdb_ch_ebi: WpDataNode
+  - wp:bdbEnsembl:
+    - rna_bdb_ensembl: WpDataNode
+  - wp:bdbEntrezGene:
+    - rna_bdb_entrez_gene: WpDataNode
+  - wp:bdbHgncSymbol:
+    - rna_bdb_hgnc_symbol: WpDataNode
+  - wp:bdbKeggCompound:
+    - rna_bdb_kegg_compound: WpDataNode
+  - wp:bdbUniprot:
+    - rna_bdb_uniprot: WpDataNode
+  - wp:isAbout:
+    - rna_is_about: GpmlDataNode
+  - rdf:type:
+    - rna_type: Class
+- Stimulation wp:Stimulation:
+  - dcterms:isPartOf:
+    - stimulation_is_part_of: Pathway
+  - dcterms:references:
+    - stimulation_references: PublicationXref
+  - wp:isAbout:
+    - stimulation_is_about: GpmlInteraction
+  - wp:participants:
+    - stimulation_participants: Binding
+  - wp:source:
+    - stimulation_source: Complex
+  - wp:target:
+    - stimulation_target: Binding
+  - rdf:type:
+    - stimulation_type: Class
+- TranscriptionTranslation wp:TranscriptionTranslation:
+  - dcterms:isPartOf:
+    - transcription_translation_is_part_of: Pathway
+  - dcterms:references:
+    - transcription_translation_references: PublicationXref
+  - wp:isAbout:
+    - transcription_translation_is_about: GpmlInteraction
+  - wp:participants:
+    - transcription_translation_participants: Conversion
+  - wp:source:
+    - transcription_translation_source: WpDataNode
+  - wp:target:
+    - transcription_translation_target: Conversion
+  - rdf:type:
+    - transcription_translation_type: Class
+- Translocation wp:Translocation:
+  - dcterms:isPartOf:
+    - translocation_is_part_of: Pathway
+  - wp:participants:
+    - translocation_participants: WpDataNode
+  - wp:source:
+    - translocation_source: WpDataNode
+  - wp:target:
+    - translocation_target: WpDataNode
+  - rdf:type:
+    - translocation_type: Class
