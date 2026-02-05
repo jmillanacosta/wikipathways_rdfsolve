@@ -6,144 +6,218 @@
   <title>WikiPathways RDF Schema</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
   <style>
-    *{box-sizing:border-box}
-    :root{--bg:#fafafa;--card:#fff;--border:#e5e5e5;--muted:#6b7280;--accent:#2563eb}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#111;line-height:1.5}
-    header{text-align:center;padding:40px 20px 24px}
-    header h1{margin:0 0 8px;font-size:1.75rem;font-weight:600}
-    header p{margin:0;color:var(--muted);font-size:.95rem}
-    header p a{color:var(--accent)}
-    .hero{max-width:960px;margin:0 auto 32px;padding:0 16px}
-    .hero img{width:100%;height:auto;border-radius:8px;border:1px solid var(--border);background:#fff}
-    .container{max-width:960px;margin:0 auto;padding:0 16px 48px}
-    h2{font-size:1.1rem;font-weight:600;margin:0 0 12px}
-    ul.files{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-    ul.files li a{display:block;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:6px;text-decoration:none;color:#111;font-size:.9rem;transition:border-color .15s,box-shadow .15s}
-    ul.files li a:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(37,99,235,.08)}
-    ul.files li a code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:.8rem;margin-left:6px;color:var(--muted)}
-    .viewer{margin-top:32px}
-    .viewer-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-    .viewer-header span{font-size:.85rem;color:var(--muted)}
-    .viewer-header a{font-size:.8rem;color:var(--accent);text-decoration:none}
-    pre{margin:0;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:6px;overflow-x:auto;font-size:.85rem}
-    footer{text-align:center;padding:24px;font-size:.8rem;color:var(--muted)}
-    footer a{color:var(--accent)}
-    .hidden{display:none}
-    .muted{color:var(--muted)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--sidebar:280px;--header:56px;--bg:#f4f5f7;--card:#fff;--border:#e0e0e0;--muted:#6b7280;--accent:#2563eb}
+    html,body{height:100%;overflow:hidden}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#111}
+
+    /* Header */
+    header{position:fixed;top:0;left:0;right:0;height:var(--header);background:var(--card);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;z-index:10}
+    header h1{font-size:1rem;font-weight:600}
+    header .links{margin-left:auto;font-size:.8rem;color:var(--muted)}
+    header .links a{color:var(--accent);margin-left:12px}
+
+    /* Layout */
+    .dashboard{display:flex;position:fixed;top:var(--header);left:0;right:0;bottom:0}
+
+    /* Sidebar */
+    aside{width:var(--sidebar);background:var(--card);border-right:1px solid var(--border);display:flex;flex-direction:column}
+    aside .title{padding:14px 16px 10px;font-weight:600;font-size:.85rem;color:var(--muted);border-bottom:1px solid var(--border)}
+    aside ul{list-style:none;flex:1;overflow-y:auto;padding:8px}
+    aside ul .muted{color:var(--muted)}
+    aside ul li{margin-bottom:4px}
+    aside ul li a{display:block;padding:8px 10px;border-radius:6px;font-size:.82rem;text-decoration:none;color:#111;transition:background .12s}
+    aside ul li a:hover,aside ul li a.active{background:#e8f0fe;color:var(--accent)}
+    aside ul li a code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-size:.72rem;margin-left:6px;color:var(--muted)}
+
+    /* Main viewer */
+    main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+    .toolbar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--border)}
+    .toolbar input[type=text]{flex:1;max-width:260px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.82rem}
+    .toolbar button{padding:6px 12px;border:1px solid var(--border);border-radius:6px;background:var(--card);font-size:.8rem;cursor:pointer;transition:background .12s}
+    .toolbar button:hover{background:#f0f0f0}
+    .toolbar button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .toolbar .file-name{font-size:.82rem;color:var(--muted);margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .toolbar a{font-size:.78rem;color:var(--accent);margin-left:10px;text-decoration:none}
+
+    /* Content area */
+    .content{flex:1;overflow:auto;padding:16px;background:var(--bg)}
+    .content.fit-svg{display:flex;align-items:center;justify-content:center;padding:0}
+    .content img.diagram{max-width:100%;max-height:100%;border-radius:6px;background:#fff;border:1px solid var(--border)}
+    .content img.diagram.natural{max-width:none;max-height:none}
+    .content pre{margin:0;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:6px;font-size:.82rem;overflow:auto;min-height:100%}
+    .highlight-match{background:#fef08a}
   </style>
 </head>
 <body>
   <header>
     <h1>WikiPathways RDF Schema</h1>
-    <p>Generated with <a href="https://pypi.org/project/rdfsolve/">rdfsolve</a></p>
+    <div class="links">
+      Generated with <a href="https://pypi.org/project/rdfsolve/">rdfsolve</a>
+      <a href="https://github.com/jmillanacosta/wikipathways_rdfsolve">GitHub</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <img src="https://raw.githubusercontent.com/jmillanacosta/wikipathways_rdfsolve/main/data/WikiPathways.svg" alt="WikiPathways schema diagram">
-  </section>
+  <div class="dashboard">
+    <aside>
+      <div class="title">Data files</div>
+      <ul id="fileList"><li><em class="muted">Loading…</em></li></ul>
+    </aside>
 
-  <div class="container">
-    <h2>Data files</h2>
-    <ul id="fileList" class="files">
-      <li><em class="muted">Loading…</em></li>
-    </ul>
-
-    <div id="viewerSection" class="viewer hidden">
-      <div class="viewer-header">
-        <span id="viewerTitle">—</span>
-        <a id="viewerRaw" href="#" target="_blank" rel="noopener">view raw</a>
+    <main>
+      <div class="toolbar">
+        <input type="text" id="searchBox" placeholder="Search in file…">
+        <button id="prevMatch" title="Previous match">▲</button>
+        <button id="nextMatch" title="Next match">▼</button>
+        <button id="fitToggle" title="Toggle fit to view">Fit</button>
+        <span class="file-name" id="fileName">WikiPathways.svg</span>
+        <a id="rawLink" href="#" target="_blank" rel="noopener">raw</a>
       </div>
-      <pre><code id="viewerCode" class="hljs"></code></pre>
-    </div>
+      <div class="content fit-svg" id="viewer">
+        <img class="diagram" id="svgImg" src="https://raw.githubusercontent.com/jmillanacosta/wikipathways_rdfsolve/main/data/WikiPathways.svg" alt="Schema diagram">
+      </div>
+    </main>
   </div>
-
-  <footer>
-    Schema for <a href="https://www.wikipathways.org/">WikiPathways</a> RDF &middot; <a href="https://github.com/jmillanacosta/wikipathways_rdfsolve">GitHub</a>
-  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script>
-    const OWNER = 'jmillanacosta';
-    const REPO  = 'wikipathways_rdfsolve';
-    const PATH  = 'data';
-    const BRANCH = 'main';
+    const OWNER='jmillanacosta', REPO='wikipathways_rdfsolve', PATH='data', BRANCH='main';
+    const SVG_URL=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${PATH}/WikiPathways.svg`;
 
-    const fileList = document.getElementById('fileList');
-    const viewerSection = document.getElementById('viewerSection');
-    const viewerTitle = document.getElementById('viewerTitle');
-    const viewerRaw = document.getElementById('viewerRaw');
-    const viewerCode = document.getElementById('viewerCode');
+    const fileList=document.getElementById('fileList');
+    const viewer=document.getElementById('viewer');
+    const svgImg=document.getElementById('svgImg');
+    const fileName=document.getElementById('fileName');
+    const rawLink=document.getElementById('rawLink');
+    const searchBox=document.getElementById('searchBox');
+    const fitToggle=document.getElementById('fitToggle');
+    const prevMatch=document.getElementById('prevMatch');
+    const nextMatch=document.getElementById('nextMatch');
 
-    function ext(name){ return name.split('.').pop().toLowerCase(); }
+    let currentMode='svg'; // 'svg' or 'code'
+    let fitSvg=true;
+    let codeText='';
+    let matches=[];
+    let matchIdx=-1;
+    let activeLink=null;
 
-    function langFor(name){
-      const e = ext(name);
-      if(e==='ttl') return 'turtle';
-      if(e==='yaml'||e==='yml') return 'yaml';
-      if(e==='json'||e==='jsonld') return 'json';
-      if(e==='csv') return 'plaintext';
-      if(e==='svg'||e==='xml') return 'xml';
-      return 'plaintext';
-    }
+    // Utils
+    const ext=n=>n.split('.').pop().toLowerCase();
+    const langFor=n=>{const e=ext(n);return{ttl:'turtle',yaml:'yaml',yml:'yaml',json:'json',jsonld:'json',csv:'plaintext',xml:'xml',svg:'xml'}[e]||'plaintext';};
 
-    async function fetchTree(path=''){
-      const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`;
-      const res = await fetch(url);
-      if(!res.ok) throw new Error('GitHub API error');
-      return res.json();
+    // Fetch GitHub tree
+    async function fetchTree(p=''){
+      const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${p}?ref=${BRANCH}`);
+      if(!r.ok)throw new Error('API');
+      return r.json();
     }
 
     async function loadFiles(){
       try{
-        const items = await fetchTree(PATH);
-        const textExts = ['ttl','yaml','yml','json','jsonld','csv','xml'];
-        const files = [];
-        for(const item of items){
-          if(item.type==='file'){
-            const e = ext(item.name);
-            if(textExts.includes(e)) files.push(item);
-          } else if(item.type==='dir'){
-            const sub = await fetchTree(item.path);
-            for(const s of sub){
-              if(s.type==='file' && textExts.includes(ext(s.name))) files.push(s);
-            }
+        const items=await fetchTree(PATH);
+        const exts=['ttl','yaml','yml','json','jsonld','csv','xml','svg'];
+        const files=[];
+        for(const i of items){
+          if(i.type==='file'&&exts.includes(ext(i.name)))files.push(i);
+          else if(i.type==='dir'){
+            const sub=await fetchTree(i.path);
+            for(const s of sub)if(s.type==='file'&&exts.includes(ext(s.name)))files.push(s);
           }
         }
         renderList(files);
-      }catch(e){
-        fileList.innerHTML = `<li style="color:#b91c1c">Failed to load file list</li>`;
-      }
+      }catch{fileList.innerHTML='<li style="color:#b91c1c">Failed to load</li>';}
     }
 
     function renderList(files){
-      fileList.innerHTML = '';
-      files.forEach(f=>{
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = '#';
-        a.innerHTML = `${f.path} <code>${ext(f.name)}</code>`;
-        a.onclick = ev=>{ ev.preventDefault(); showFile(f); };
+      fileList.innerHTML='';
+      // Put SVG first
+      const sorted=[...files].sort((a,b)=>ext(a.name)==='svg'?-1:ext(b.name)==='svg'?1:0);
+      sorted.forEach(f=>{
+        const li=document.createElement('li');
+        const a=document.createElement('a');
+        a.href='#';
+        a.innerHTML=`${f.name} <code>${ext(f.name)}</code>`;
+        a.onclick=ev=>{ev.preventDefault();showFile(f,a);};
+        if(f.name==='WikiPathways.svg'){a.classList.add('active');activeLink=a;}
         li.appendChild(a);
         fileList.appendChild(li);
       });
+      // Set raw link for default SVG
+      rawLink.href=SVG_URL;
     }
 
-    async function showFile(f){
-      viewerSection.classList.remove('hidden');
-      viewerTitle.textContent = f.path + ' — loading…';
-      viewerRaw.href = f.html_url;
-      try{
-        const res = await fetch(f.download_url);
-        const text = await res.text();
-        viewerCode.textContent = text;
-        viewerCode.className = 'hljs ' + langFor(f.name);
-        hljs.highlightElement(viewerCode);
-        viewerTitle.textContent = f.path;
-      }catch(e){
-        viewerCode.textContent = 'Error loading file';
-        viewerTitle.textContent = f.path + ' — error';
+    async function showFile(f,link){
+      if(activeLink)activeLink.classList.remove('active');
+      link.classList.add('active');
+      activeLink=link;
+      fileName.textContent=f.path;
+      rawLink.href=f.html_url;
+      searchBox.value='';
+      matches=[];matchIdx=-1;
+
+      if(ext(f.name)==='svg'){
+        currentMode='svg';
+        viewer.className='content fit-svg';
+        viewer.innerHTML=`<img class="diagram${fitSvg?'':' natural'}" id="svgImg" src="${f.download_url}" alt="${f.name}">`;
+      }else{
+        currentMode='code';
+        viewer.className='content';
+        viewer.innerHTML='<pre><code class="hljs" id="codeBlock">Loading…</code></pre>';
+        try{
+          const r=await fetch(f.download_url);
+          codeText=await r.text();
+          const codeBlock=document.getElementById('codeBlock');
+          codeBlock.textContent=codeText;
+          codeBlock.className='hljs '+langFor(f.name);
+          hljs.highlightElement(codeBlock);
+        }catch{document.getElementById('codeBlock').textContent='Error loading file';}
       }
     }
+
+    // Fit toggle
+    fitToggle.onclick=()=>{
+      fitSvg=!fitSvg;
+      fitToggle.classList.toggle('active',fitSvg);
+      if(currentMode==='svg'){
+        const img=viewer.querySelector('img');
+        if(img)img.classList.toggle('natural',!fitSvg);
+        viewer.classList.toggle('fit-svg',fitSvg);
+      }
+    };
+    fitToggle.classList.add('active');
+
+    // Search functionality (code mode)
+    function doSearch(){
+      if(currentMode!=='code')return;
+      const q=searchBox.value.trim();
+      if(!q){clearHighlights();return;}
+      const cb=document.getElementById('codeBlock');
+      if(!cb)return;
+      // Reset
+      cb.innerHTML=hljs.highlight(codeText,{language:langFor(fileName.textContent)}).value;
+      // Find matches
+      const regex=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+      let html=cb.innerHTML;
+      matches=[];
+      let i=0;
+      html=html.replace(regex,m=>{matches.push(i++);return`<mark class="highlight-match" data-idx="${i-1}">${m}</mark>`;});
+      cb.innerHTML=html;
+      matchIdx=matches.length?0:-1;
+      scrollToMatch();
+    }
+    function clearHighlights(){
+      matches=[];matchIdx=-1;
+      const cb=document.getElementById('codeBlock');
+      if(cb){cb.innerHTML=hljs.highlight(codeText,{language:langFor(fileName.textContent)}).value;}
+    }
+    function scrollToMatch(){
+      if(matchIdx<0)return;
+      const mark=viewer.querySelector(`mark[data-idx="${matchIdx}"]`);
+      if(mark)mark.scrollIntoView({block:'center',behavior:'smooth'});
+    }
+    searchBox.addEventListener('input',doSearch);
+    prevMatch.onclick=()=>{if(matches.length){matchIdx=(matchIdx-1+matches.length)%matches.length;scrollToMatch();}};
+    nextMatch.onclick=()=>{if(matches.length){matchIdx=(matchIdx+1)%matches.length;scrollToMatch();}};
 
     loadFiles();
   </script>
